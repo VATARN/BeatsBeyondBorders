@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export default function BasicTextFields() {
+export default function SearchBar(props) {
     return (
         <Box
             component="form"
@@ -12,7 +12,13 @@ export default function BasicTextFields() {
             noValidate
             autoComplete="off"
         >
-            <TextField id="filled-basic" label="Search" variant="filled" />
+            <TextField
+                id="filled-basic"
+                label="Search"
+                variant="filled"
+                type="text"
+                value={props.searchString}
+                onChange={props.onChange} />
         </Box>
     );
 }

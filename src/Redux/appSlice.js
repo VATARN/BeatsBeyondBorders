@@ -3,27 +3,17 @@ import { createSlice } from '@reduxjs/toolkit'
 export const appSlice = createSlice({
     name: 'app',
     initialState: {
-        showPopUp: false,
-        showPopUpType: "",
-        showPopUpMessage: "",
-        showPopUpHeading: "",
+        userSelected: "None",
+        genreSelected: "None",
+        searchString: ""
     },
     reducers: {
-        setShowPopUp: (state, action) => {
-            state.showPopUp = true;
-            state.showPopUpType = action.payload.type;
-            state.showPopUpMessage = action.payload.message;
-            state.showPopUpHeading = action.payload.heading;
+        setUserSelected: (state, action) => {
+            state.userSelected = action.payload;
         },
-        setShowPopUpFalse: (state) => {
-            state.showPopUp = false;
-            state.showPopUpType = "";
-            state.showPopUpMessage = "";
-            state.showPopUpHeading = "";
-        }
     },
 })
 
-export const { setShowPopUp, setShowPopUpFalse } = appSlice.actions
+export const { setUserSelected } = appSlice.actions
 
 export default appSlice.reducer
